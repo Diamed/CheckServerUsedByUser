@@ -68,7 +68,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\LoggedUser.cs" />
+    <Compile Include="Model\Preferences.cs" />
     <Compile Include="Model\Server.cs" />
+    <Compile Include="Model\Settings.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

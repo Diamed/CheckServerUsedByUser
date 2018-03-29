@@ -8,7 +8,7 @@ namespace CheckServerUsedByUser.Model
     /// <summary>
     /// Server, which we will check
     /// </summary>
-    internal sealed class Server
+    internal sealed class Server : INotifyPropertyChanged
     {
         private IPAddress _ipAddress;
         public IPAddress IPAddress
@@ -32,7 +32,16 @@ namespace CheckServerUsedByUser.Model
             }
         }
 
-        public TimeSpan IdleTime { get; private set; }
+        private TimeSpan _idleTime;
+        public TimeSpan IdleTime
+        {
+            get => _idleTime;
+            set
+            {
+                _idleTime = value;
+                OnPropertyChanged(nameof(IdleTime));
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName]string prop = "")
